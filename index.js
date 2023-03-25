@@ -8,9 +8,10 @@ const {userRouter}=require("./routes/user.routes")
 const cors=require("cors")
 
 app.use(express.json())
-app.use(cors({
-    origin:"http://localhost:3000"
-}))
+app.use(cors())
+// app.use(cors({
+//     origin:"http://localhost:3000"
+// }))
 app.use("/users",userRouter)
 app.use(validator)
 app.use("/products",productRouter)

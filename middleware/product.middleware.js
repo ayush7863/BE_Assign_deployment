@@ -5,7 +5,7 @@ const validator = (req, res, next) => {
 //   console.log(token)
   if (token) {
     const decoded=jwt.verify(token, "masai") 
-      if (decoded.userID) {
+      if (decoded) {
         req.body.userID=decoded.userID
         next();        
       } else {
